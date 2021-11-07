@@ -1,5 +1,6 @@
 [![Gitter chat](https://badges.gitter.im/gitterHQ/gitter.png)](https://gitter.im/big-data-europe/Lobby)
-#Changes awadhesh14
+
+# Changes awadhesh14
 
 These changes are made for running on Mac M1
 debian:9 to ubuntu:16.04
@@ -7,7 +8,7 @@ java home in base entrypoint
 bde2020 to awadhesh14
 tag change in makefile
 
-#Steps to run on Mac m1
+# Steps to run on Mac m1
 
 1. make build :) 
 2. docker-compose up -d
