@@ -4,7 +4,7 @@ services:
   namenode:
     image: awadhesh14/hadoop-namenode
     container_name: namenode
-    # restart: always
+    restart: always
     ports:
       - 9870:9870
       - 9000:9000
@@ -18,7 +18,7 @@ services:
   datanode:
     image: awadhesh14/hadoop-datanode
     container_name: datanode
-    # restart: always
+    restart: always
     volumes:
       - hadoop_datanode:/hadoop/dfs/data
     environment:
@@ -29,7 +29,7 @@ services:
   resourcemanager:
     image: awadhesh14/hadoop-resourcemanager
     container_name: resourcemanager
-    # restart: always
+    restart: always
     environment:
       SERVICE_PRECONDITION: "namenode:9000 namenode:9870 datanode:9864"
     env_file:
@@ -38,7 +38,7 @@ services:
   nodemanager1:
     image: awadhesh14/hadoop-nodemanager
     container_name: nodemanager
-    # restart: always
+    restart: always
     environment:
       SERVICE_PRECONDITION: "namenode:9000 namenode:9870 datanode:9864 resourcemanager:8088"
     env_file:
@@ -47,7 +47,7 @@ services:
   historyserver:
     image: awadhesh14/hadoop-historyserver
     container_name: historyserver
-    # restart: always
+    restart: always
     environment:
       SERVICE_PRECONDITION: "namenode:9000 namenode:9870 datanode:9864 resourcemanager:8088"
     volumes:
